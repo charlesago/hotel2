@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello GateauController!{% endblock %}
+
+{% block body %}
+
+
+
+
+    <div class="single-product">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading mt-5  ">
+                    <div class="line-dec"></div>
+                    <h1>{{ room.name }}</h1>
+                    <h6 class="fs-3" >  12€</h6>
+                    <hr>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="product-slider">
+                    <div id="slider" class="flexslider">
+                        <ul class="slides border border-radius-black border-5 d-flex justify-content-center">
+
+
+
+
+                            <!-- items mirrored twice, total of 12 -->
+                        </ul>
+                    </div>
+                    <div id="carousel" class="flexslider " style="display: flex">
+                        <ul class="slides " style="display: flex">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="right-content">
+                    <h4>{{ room.name }}</h4>
+                    <br>
+                    <div>
+                        <h5>Description</h5>
+                        <p class="mt-1">{{ room.description}} </p>
+
+                    </div>
+
+                    <div class="down-content">
+                        <div class="categories">
+                        </div>
+                        <div class="share">
+                            <h6>Share: <span><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-twitter"></i></a></span></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="container row">
+    <div class="col-10">
+        <div>
+        <h5 class="mt-5">Equipements</h5>
+        </div>
+        <div>
+        <p class="mt-4"> - {{ equipement.name }}</p>
+
+        </div>
+
+    </div>
+    </div>
+    {% if app.user %}
+        <a href="{{ path('app_room_book',{id:room.id}) }}" class="btn btn-success">Faire une reservation dans cette chambre</a>
+    {% else %}
+        <a href="{{ path('app_login') }}" class="btn btn-success">Faire une reservation dans cette chambre</a>
+    {% endif %}
+{% endblock %}

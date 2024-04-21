@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello GateauController!{% endblock %}
+
+{% block body %}
+
+{{ form_start(formRoom) }}
+{{ form_row(formRoom.name) }}
+    {{ form_row(formRoom.description) }}
+
+<input type="submit" class="btn btn-success">
+{{ form_end(formRoom) }}
+{% endblock %}
